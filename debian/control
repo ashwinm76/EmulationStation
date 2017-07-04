@@ -8,7 +8,13 @@ Homepage: http://emulationstation.org
 
 Package: emulationstation
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, emulationstation-data
 Description: cross-platform graphical front-end for emulators.
  A graphical and themeable emulator front-end that allows you to access 
  all your favorite games in one place, even without a keyboard!
+
+Package: emulationstation-data
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: data files for emulationstation.
+ Data files such as themes, etc. for emulationstation.
