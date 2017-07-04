@@ -1,0 +1,14 @@
+Source: emulationstation
+Section: misc
+Priority: optional
+Maintainer: Ashwin Menon <ashwin.menon@gmail.com>
+Build-Depends: debhelper (>= 9), cmake, libsdl2-dev, libboost-system-dev, libboost-filesystem-dev, libboost-date-time-dev, libboost-locale-dev, libfreeimage-dev, libfreetype6-dev, libeigen3-dev, libcurl4-openssl-dev, libasound2-dev, libgl1-mesa-dev
+Standards-Version: 3.9.8
+Homepage: http://emulationstation.org
+
+Package: emulationstation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: cross-platform graphical front-end for emulators.
+ A graphical and themeable emulator front-end that allows you to access 
+ all your favorite games in one place, even without a keyboard!
