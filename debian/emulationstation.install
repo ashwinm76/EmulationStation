@@ -1,1 +1,2 @@
-emulationstation /usr/bin/
+emulationstation /usr/lib/emulationstation/
+wrapper/emulationstation /usr/bin/

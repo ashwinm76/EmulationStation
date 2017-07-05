@@ -1,0 +1,36 @@
+From: Ashwin Menon <ashwin.menon@gmail.com>
+Date: Wed, 5 Jul 2017 10:41:14 +0530
+Subject: Update wrapper script
+
+---
+ wrapper/emulationstation | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+ create mode 100755 wrapper/emulationstation
+
+diff --git a/wrapper/emulationstation b/wrapper/emulationstation
+new file mode 100755
+index 0000000..4677eaa
+--- /dev/null
++++ b/wrapper/emulationstation
+@@ -0,0 +1,21 @@
++#!/bin/sh
++
++esdir="/usr/lib/emulationstation"
++while true; do
++    rm -f /tmp/es-restart /tmp/es-sysrestart /tmp/es-shutdown
++    "$esdir/emulationstation" "$@"
++    ret=$?
++    [ -f /tmp/es-restart ] && continue
++    if [ -f /tmp/es-sysrestart ]; then
++        rm -f /tmp/es-sysrestart
++        sudo reboot
++        break
++    fi
++    if [ -f /tmp/es-shutdown ]; then
++        rm -f /tmp/es-shutdown
++        sudo poweroff
++        break
++    fi
++    break
++done
++exit $ret
